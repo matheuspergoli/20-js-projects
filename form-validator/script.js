@@ -7,7 +7,10 @@ const passwordConfirm = document.getElementById('password-2')
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement
-  formControl.className = 'form-control error'
+  if (formControl.classList.contains('success')) {
+    formControl.classList.remove('success')
+  }
+  formControl.classList.add('error')
   const small = formControl.querySelector('small')
   small.innerText = message
 }
@@ -15,7 +18,10 @@ function showError(input, message) {
 // Show success outline
 function showSuccess(input) {
   const formControl = input.parentElement
-  formControl.className = 'form-control success'
+  if (formControl.classList.contains('error')) {
+    formControl.classList.remove('error')
+  }
+  formControl.classList.add('success')
 }
 
 // Check email is valid
