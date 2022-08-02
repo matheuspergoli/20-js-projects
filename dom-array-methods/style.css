@@ -51,6 +51,8 @@ button:last-child {
 
 main {
   flex: 1;
+  height: 270px;
+  overflow-y: auto;
   padding-left: 20px;
   /* padding: 10px 20px; */
 }
