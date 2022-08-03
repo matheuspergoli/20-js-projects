@@ -1,0 +1,161 @@
+*, *::after, *::before {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --modal-duration: 1s;
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  color: white;
+  transform: translateX(-100%);
+  background-color: var(--primary-color);
+  border-right: 2px solid rgba(200, 200, 200, 0.1);
+  z-index: 100;
+}
+
+nav .logo {
+  padding: 30px 0;
+  text-align: center;
+}
+
+nav .logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+nav ul li {
+  padding: 20px;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+nav ul li:first-of-type {
+  border-top: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+nav ul li a {
+  color: #fff;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: relative;
+  color: #fff;
+  font-size: 130%;
+  padding: 40px 15px;
+  text-align: center;
+  background-color: var(--primary-color);
+}
+
+header p {
+  margin: 30px 0;
+}
+
+button, input[type='submit'] {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+}
+
+button:focus {
+  outline: none;
+}
+
+.toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cta-btn {
+  font-size: 20px;
+  padding: 12px 30px;
+}
+
+.container {
+  width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  color: #fff;
+  padding: 15px;
+  background-color: var(--primary-color);
+}
+
+.modal-header h3 {
+  border-bottom: 1px solid #333;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-form div {
+  margin: 15px 0;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+  width: 100%;
+  padding: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 25px;
+  background-color: transparent;
+}
