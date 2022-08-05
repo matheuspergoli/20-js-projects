@@ -1,6 +1,33 @@
+ *, *::after, *::before {
+  box-sizing: border-box;
+ }
+
+html {
+  font-family: sans-serif;
+}
+
 body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
   color: #fff;
+  overflow: hidden;
   background-color: #34495e;
+}
+
+h1 {
+  margin: 20px 0 0;
+}
+
+.game-container {
+  position: relative;
+  margin: auto;
+  width: 450px;
+  height: 350px;
+  padding: 20px 30px;
 }
 
 .figure-container {
@@ -12,4 +39,40 @@ body {
 
 .figure-part {
   display: none;
+}
+
+.wrong-letters-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+  font-size: 24px;
+}
+
+.word {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+
+.letter {
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  width: 20px;
+  height: 50px;
+  margin: 0 3px;
+  font-size: 30px;
+  border-bottom: 3px solid #2980b9;
 }
