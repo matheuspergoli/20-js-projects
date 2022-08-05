@@ -29,4 +29,40 @@ function displayWord() {
     popup.style.display = 'flex'
   }
 }
+
+// Update the wrong letters
+function updateWrongLettersElement() {
+
+}
+
+// Show notification
+function showNotification() {
+  notification.classList.add('show')
+  setTimeout(() => {
+    notification.classList.remove('show')
+  }, 2000)
+}
+
+// Keydown letter press
+window.addEventListener('keydown', event => {
+  if (event.key >= 'a' && event.key <= 'z') {
+    const letter = event.key
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter)
+        displayWord()
+      } else {
+        showNotification()
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter)
+        updateWrongLettersElement()
+      } else {
+        showNotification()
+      }
+    }
+  }
+})
+
 displayWord()
