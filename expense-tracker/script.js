@@ -86,6 +86,7 @@ function updateValues() {
   balance.innerText = `$${total}`
   money_plus.innerText = `$${income}`
   money_minus.innerText = `$${expense}`
+  changeBalanceColor(total)
 }
 
 // Remove transaction by ID
@@ -100,6 +101,13 @@ function removeTransaction(id) {
 // Update localStorage transactions
 function updateLocalStorage() {
   localStorage.setItem('transactions', JSON.stringify(transactions))
+}
+
+// Change the color of the balance text
+function changeBalanceColor(balanceValue) {
+  if (balance.classList.contains('plus')) balance.classList.remove('plus')
+  if (balance.classList.contains('minus')) balance.classList.remove('minus')
+  balance.classList.add(`${+balanceValue > 0 ? 'plus' : 'minus'}`)
 }
 
 // Init app
